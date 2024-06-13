@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color:dodgerblue; */
+    background: linear-gradient(to bottom, dodgerblue, aqua);
+    background-size:cover;
+    background-position:center;
+    color: #120000; /* Text color */
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="file"],
+input[type="submit"],
+input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border:#080000;
+    border-radius: 4px;
+    background-color:whitesmoke; /* Button background color */
+    color: #080000; /* Button text color */
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+}
+
+input[type="submit"]:hover {
+    background-color:slategrey; /* Button background color on hover */
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 600px) {
+    input[type="file"],
+    input[type="submit"],
+    input[type="text"] {
+        width: 80%;
+    }
+}

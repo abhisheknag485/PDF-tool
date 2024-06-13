@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NLP App</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <h1>PDF Tool</h1>
+
+    <!-- File upload form -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required>
+        <input type="submit" value="Upload PDF">
+    </form>
+
+    <!-- Display extracted text -->
+    {% if extracted_text %}
+        <h2>Extracted Text:</h2>
+        <p>{{ extracted_text }}</p>
+    {% endif %}
+
+    <!-- Buttons for different operations -->
+    <form action="/extract_text" method="post">
+        <input type="submit" value="Extract Text">
+    </form>
+
+    <form action="/translate_text" method="post">
+        <input type="submit" value="Translate Text">
+    </form>
+
+    <form action="/generate_wordcloud" method="post">
+        <input type="submit" value="Generate Word Cloud">
+    </form>
+
+    <form action="/answer_question" method="post">
+        <label for="question">Enter your question:</label><br>
+        <input type="text" id="question" name="question"><br><br>
+        <input type="submit" value="Get Answer">
+    </form>
+
+    <!-- Display word cloud image -->
+    {% if wordcloud_image %}
+        <h2>Word Cloud:</h2>
+        <img src="{{ wordcloud_image }}" alt="Word Cloud">
+    {% endif %}
+
+    <!-- Display translated text -->
+    {% if translated_text %}
+        <h2>Translated Text:</h2>
+        <p>{{ translated_text }}</p>
+    {% endif %}
+
+    <!-- Display answer -->
+    {% if answer %}
+        <h2>Answer:</h2>
+        <p>{{ answer }}</p>
+    {% endif %}
+</body>
+</html>
